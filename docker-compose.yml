@@ -7,19 +7,20 @@ services:
     container_name: "ztrback"
     build: ./
     command: ./app
-    env_file:
-      - .env
+    env_file: .env
     environment:
       - DATABASE_URL=postgresdb
     ports:
-      - "8001:8000"
+      - 3000:3000
     depends_on:
       - postgresdb
+
 
   postgresdb:
     image: postgres:latest
     container_name: "ztrback-db"
     restart: unless-stopped
+    env_file: .env
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -34,4 +35,4 @@ services:
     volumes:
       - ./.data/db:/data/db
     ports:
-      - "5432:5432"
+      - 5432:5432

@@ -1,4 +1,4 @@
-FROM golang:1.20.4 as builder
+FROM golang:1.22 as builder
 
 RUN go version
 LABEL authors="enyad"
@@ -20,7 +20,6 @@ RUN apk add postgresql-client
 RUN apk --no-cache add curl
 
 COPY --from=0  /go/src/github.com/enyaaad/ztrback/.bin/app .
-COPY --from=0  /go/src/github.com/enyaaad/ztrback/config/ ./config/
 
 CMD ["./app"]
 

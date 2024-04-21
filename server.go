@@ -1,8 +1,10 @@
-package main
+package server
 
 import (
+	"austem/handlers"
 	"github.com/gofiber/fiber/v2"
-	"log"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	log "github.com/sirupsen/logrus"
 )
 
 var config = fiber.Config{
@@ -21,7 +23,8 @@ var notes = []note{
 	{ID: "3", Title: "Kill Kenny", Description: "He must die"},
 }
 
-func main() {
+func StartAPI() {
+
 	app := fiber.New(config)
 
 	// Create a new route with GET method
@@ -29,9 +32,15 @@ func main() {
 		return c.JSON(notes)
 	})
 
+	app.Get("/projects", handlers.GetAllProjects)
+	app.Get("/body", handlers.GetAllBackgrounds)
+	app.Get("/socials", handlers.GetAllSocials)
+
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World!")
 	})
+
+	app.Use(cors.New())
 
 	log.Fatal(app.Listen(":3000"))
 }
