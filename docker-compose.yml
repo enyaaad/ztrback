@@ -1,0 +1,37 @@
+version: '3.4'
+
+
+services:
+  go-server:
+    image: golang
+    container_name: "ztrback"
+    build: ./
+    command: ./app
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresdb
+    ports:
+      - "8001:8000"
+    depends_on:
+      - postgresdb
+
+  postgresdb:
+    image: postgres:latest
+    container_name: "ztrback-db"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - PGDATA = "/var/lib/postgresql/data/pgdata"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    volumes:
+      - ./.data/db:/data/db
+    ports:
+      - "5432:5432"
