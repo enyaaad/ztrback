@@ -11,4 +11,5 @@ type Socials struct {
 	Url         string `gorm:"type:varchar(255);not null" json:"url"`
 	LogoUrl     string `gorm:"type:varchar(255);not null" json:"logo_url"`
 	ImageUrl    string `gorm:"type:varchar(255);not null" json:"image_url"`
+	Href        string `gorm:"type:varchar(255);not null" json:"href"`
 }

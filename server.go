@@ -11,35 +11,35 @@ var config = fiber.Config{
 	ServerHeader: "My Server", // add custom server header
 }
 
-type note struct {
-	ID          string `json:"id"`
-	Title       string `json:"title"`
-	Description string `json:"description"`
-}
-
-var notes = []note{
-	{ID: "1", Title: "Buy food", Description: "Go shop and buy something"},
-	{ID: "2", Title: "Do workout", Description: "Get six press cubes"},
-	{ID: "3", Title: "Kill Kenny", Description: "He must die"},
-}
-
 func StartAPI() {
 
 	app := fiber.New(config)
 
-	// Create a new route with GET method
-	app.Get("/app", func(c *fiber.Ctx) error {
-		return c.JSON(notes)
+	app.Use(func(c *fiber.Ctx) error {
+		// Установка заголовков для разрешения запросов от любых источников
+		c.Set("Access-Control-Allow-Origin", "*")
+		c.Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		c.Set("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization")
+		c.Set("Accept-Encoding", "gzip")
+
+		// Пропуск запросов метода OPTIONS, так как он используется для предварительной проверки CORS
+		if c.Method() == "OPTIONS" {
+			return c.SendStatus(fiber.StatusNoContent)
+		}
+
+		// Продолжаем выполнение запроса
+		return c.Next()
 	})
 
 	app.Get("/projects", handlers.GetAllProjects)
+	app.Get("/projects/:id", handlers.GetProjectByID)
+
 	app.Get("/body", handlers.GetAllBackgrounds)
+	app.Get("/body/random", handlers.GetRandomBackground)
+
 	app.Get("/socials", handlers.GetAllSocials)
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
-	})
-
+	app.Get("/video/:id/:season/:series_number", handlers.GetVideo)
 	app.Use(cors.New())
 
 	log.Fatal(app.Listen(":3000"))
