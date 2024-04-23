@@ -31,15 +31,18 @@ func StartAPI() {
 		return c.Next()
 	})
 
-	app.Get("/projects", handlers.GetAllProjects)
-	app.Get("/projects/:id", handlers.GetProjectByID)
+	v1 := app.Group("/api")
 
-	app.Get("/body", handlers.GetAllBackgrounds)
-	app.Get("/body/random", handlers.GetRandomBackground)
+	v1.Get("/projects", handlers.GetAllProjects)
+	v1.Get("/projects/:id", handlers.GetProjectByID)
 
-	app.Get("/socials", handlers.GetAllSocials)
+	v1.Get("/body", handlers.GetAllBackgrounds)
+	v1.Get("/body/random", handlers.GetRandomBackground)
 
-	app.Get("/video/:id/:season/:series_number", handlers.GetVideo)
+	v1.Get("/socials", handlers.GetAllSocials)
+
+	v1.Get("/video/:id/:season/:series_number", handlers.GetVideo)
+
 	app.Use(cors.New())
 
 	log.Fatal(app.Listen(":3000"))
