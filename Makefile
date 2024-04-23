@@ -1,2 +1,2 @@
 run:
-	docker-compose up --remove-orphans --build go-server
+	docker-compose up -d --remove-orphans --build go-server
