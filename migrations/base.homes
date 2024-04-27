@@ -1,3 +1,0 @@
-INSERT INTO public.homes (id, created_at, updated_at, deleted_at, background_url) VALUES (1, null, null, null, 'https://storage.yandexcloud.net/zetrego/homevideos/Demon%20Slayer%20_%20OP%20_%20_Gurenge_%20by%20LiSA%20HD.mp4');
-INSERT INTO public.homes (id, created_at, updated_at, deleted_at, background_url) VALUES (2, null, null, null, 'https://storage.yandexcloud.net/zetrego/homevideos/full_alastor_vid.mp4');
-INSERT INTO public.homes (id, created_at, updated_at, deleted_at, background_url) VALUES (3, null, null, null, 'https://storage.yandexcloud.net/zetrego/homevideos/jujutsukaisen.mp4');
