@@ -5,7 +5,7 @@ import "gorm.io/gorm"
 type News struct {
 	gorm.Model
 	Id          int    `gorm:"type:int;unique" json:"id"`
-	TitleDate   string `gorm:"type:varchar;not null" json:"titleDate"`
-	Description string `gorm:"type:varchar;" json:"description"`
-	Image       string `gorm:"type:varchar;not null" json:"image"`
+	TitleDate   string `gorm:"type:varchar(max);not null" json:"titleDate"`
+	Description string `gorm:"type:varchar(max);" json:"description"`
+	Image       string `gorm:"type:varchar(max);not null" json:"image"`
 }
