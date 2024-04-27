@@ -45,7 +45,7 @@ func StartAPI() {
 	v1.Get("/video/:id/:season/:series_number", handlers.GetVideo)
 
 	v1.Get("/news", handlers.GetAllNews)
-	v1.Get("/news:id", handlers.GetNewsByID)
+	v1.Get("/news/:id", handlers.GetNewsByID)
 
 	app.Use(cors.New())
 
