@@ -59,14 +59,12 @@ func Migrator() {
 		},
 
 		&models.Video{
-			ID:           0,
 			SeasonID:     1,
 			SeriesNumber: 0,
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/S0E0Hazbin/S0E0_Hazbin~1.m3u8",
 		},
 
 		&models.Video{
-			ID:           1,
 			SeasonID:     1,
 			SeriesNumber: 1,
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/S0E0Hazbin/S0E0_Hazbin~2.m3u8",
@@ -118,7 +116,6 @@ func Migrator() {
 		},
 
 		&models.News{
-			Id:        0,
 			TitleDate: "21.04.24",
 			Description: "Исправлены баги отображения страниц на мобильных устроствах \n " +
 				"Оптимизирована работа плеера. Теперь плеер грузится гораздо быстрее и \n" +
@@ -127,7 +124,6 @@ func Migrator() {
 		},
 
 		&models.News{
-			Id:        1,
 			TitleDate: "25.04.24",
 			Description: "🌟 Хочешь стать частью нашей удивительной команды " +
 				"и  начать озвучивать аниме/мультсериалы? Отправь нам свои " +
