@@ -11,5 +11,5 @@ type Video struct {
 	ID           uint   `gorm:"primaryKey"`
 	SeasonID     uint   `json:"SeasonID"`
 	SeriesNumber int    `gorm:"type:integer;not null;" json:"series_number"`
-	SeriesURL    string `gorm:"type:varchar(255);not null" json:"series_url"`
+	SeriesURL    string `gorm:"type:varchar;not null" json:"series_url"`
 }
