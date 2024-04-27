@@ -10,6 +10,7 @@ type Season struct {
 type Video struct {
 	ID           uint   `gorm:"primaryKey"`
 	SeasonID     uint   `json:"SeasonID"`
+	ProjectsID   uint   `json:"ProjectsID"`
 	SeriesNumber int    `gorm:"type:integer;not null;" json:"series_number"`
 	SeriesURL    string `gorm:"type:varchar;not null" json:"series_url"`
 }
