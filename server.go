@@ -18,7 +18,7 @@ func StartAPI() {
 	app.Use(func(c *fiber.Ctx) error {
 		// Установка заголовков для разрешения запросов от любых источников
 		c.Set("Access-Control-Allow-Origin", "*")
-		c.Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		c.Set("Access-Control-Allow-Methods", "GET, POST")
 		c.Set("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization")
 		c.Set("Accept-Encoding", "gzip")
 
@@ -35,6 +35,7 @@ func StartAPI() {
 
 	v1.Get("/projects", handlers.GetAllProjects)
 	v1.Get("/projects/:id", handlers.GetProjectByID)
+	v1.Get("/projects/series/:id", handlers.GetProjectByID)
 
 	v1.Get("/body", handlers.GetAllBackgrounds)
 	v1.Get("/body/random", handlers.GetRandomBackground)
@@ -42,6 +43,9 @@ func StartAPI() {
 	v1.Get("/socials", handlers.GetAllSocials)
 
 	v1.Get("/video/:id/:season/:series_number", handlers.GetVideo)
+
+	v1.Get("/news", handlers.GetAllNews)
+	v1.Get("/news:id", handlers.GetNewsByID)
 
 	app.Use(cors.New())
 
