@@ -32,12 +32,6 @@ services:
       - DB_NAME=ztrback-db
       - PORT=5432
       - PGDATA = "/var/lib/postgresql/data/pgdata"
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER $$POSTGRES_DB"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
     volumes:
       - ./.data/db:/data/db
     ports:
