@@ -27,8 +27,8 @@ services:
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=ztrback-db
       - POSTGRES_PORT=5432
-      - DB_USER=root
-      - DB_PASSWORD=root
+      - DB_USER=admin
+      - DB_PASSWORD=admin
       - DB_NAME=ztrback-db
       - PORT=5432
     healthcheck:
