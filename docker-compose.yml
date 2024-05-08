@@ -31,7 +31,11 @@ services:
       - DB_PASSWORD=admin
       - DB_NAME=ztrback-db
       - PORT=5432
-      - PGDATA = "/var/lib/postgresql/data/pgdata"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
     volumes:
       - ./.data/db:/data/db
     ports:
