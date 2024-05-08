@@ -9,7 +9,7 @@ services:
     command: ./app
     env_file: .env
     environment:
-      - DATABASE_URL=postgresql://root:root@postgresdb:5432/ztrback-db
+      - DATABASE_URL=postgres://admin:admin@postgresdb:5432/ztrback-db?sslmode=disable
     ports:
       - 3000:3000
     depends_on:
@@ -23,8 +23,8 @@ services:
     env_file: .env
     environment:
       - POSTGRES_HOST=postgresdb
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=ztrback-db
       - POSTGRES_PORT=5432
       - DB_USER=admin
