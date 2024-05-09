@@ -31,10 +31,8 @@ func StartDB() {
 
 	var err error
 
-	dsn := fmt.Sprintf(
-		"host=%s user=%s password=%s dbname=%s port=%s sslmode=disable", host, user,
-		pass, name, port,
-	)
+	dsn := fmt.Sprintf("host=postgresdb user=root password=root dbname=root port=5432 sslmode=disable")
+
 	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {

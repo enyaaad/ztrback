@@ -69,6 +69,13 @@ func Migrator() {
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/S0E0Hazbin/S0E0_Hazbin~2.m3u8",
 		},
 
+		&models.Video{
+			SeasonID:     1,
+			ProjectsID:   1,
+			SeriesNumber: 2,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/hazbinhotel/s1e3/S0E0_Hazbin~3.m3u8",
+		},
+
 		&models.Home{
 			BackgroundURL: "https://storage.yandexcloud.net/zetrego/homevideos/jujutsukaisen.mp4",
 		},
