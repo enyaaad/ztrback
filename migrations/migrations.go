@@ -54,6 +54,11 @@ func Migrator() {
 			ProjectsID: 1,
 			Number:     1,
 		},
+		&models.Season{
+			ID:         4,
+			ProjectsID: 2,
+			Number:     4,
+		},
 
 		&models.Video{
 			SeasonID:     1,
@@ -74,6 +79,13 @@ func Migrator() {
 			ProjectsID:   1,
 			SeriesNumber: 2,
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/hazbinhotel/s1e3/S0E0_Hazbin~3.m3u8",
+		},
+
+		&models.Video{
+			SeasonID:     4,
+			ProjectsID:   2,
+			SeriesNumber: 1,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/demonslayer/4/1/demon_slayer1.m3u8",
 		},
 
 		&models.Home{
