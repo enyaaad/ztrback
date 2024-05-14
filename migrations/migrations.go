@@ -35,7 +35,7 @@ func Migrator() {
 			Description:  "Танзиро - обычный мальчик, которого постигла нелегкая судьба. В нелегкое для себя время, он должен защитить свою сестренку. В будущем хотели бы обязательно озвучить!",
 			Image:        "https://storage.yandexcloud.net/zetrego/series/preview/d8c98b80ee7cd3400685e59dfab01735.jpg",
 			VideoPreview: "https://storage.yandexcloud.net/zetrego/homevideos/Demon%20Slayer%20_%20OP%20_%20_Gurenge_%20by%20LiSA%20HD.mp4",
-			InFuture:     true,
+			InFuture:     false,
 		},
 		&models.Projects{
 			ID:    3,
