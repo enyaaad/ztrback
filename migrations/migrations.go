@@ -42,11 +42,10 @@ func Migrator() {
 			Title: "Магическая битва",
 			Description: "Маги - обычные люди," +
 				" обладающие сверхъестественной силой, недоступной человеку. На этом и строится магический мир, такой двоякий и нестабильный, однако намного легче, если есть кому нас защитить. Не так давно баланс был нарушен, когда тысячелетнее проклятие обрело сосуд." +
-				" Рёмен Сукуна захватил тело обычного подростка Итадори Юджи. Но, постойте ка, кажется тот его может с лёгкостью подавлять, но всё же остальные маги его опасаются, хотят уничтожить, что неоднократно заставляет попадать Итадори в неприятности. А теперь, не стой на месте! " +
-				"С нами ты ощутишь полное погружение в мир магии, так что вместе отправляемся в это незабываемое приключение. Ты готов?",
+				" Рёмен Сукуна захватил тело обычного подростка Итадори Юджи. Ты готов?",
 			Image:        "https://storage.yandexcloud.net/zetrego/series/preview/thumb-jujutsu-kaisen-cursed-clash.jpg",
 			VideoPreview: "https://storage.yandexcloud.net/zetrego/homevideos/jujutsukaisen.mp4",
-			InFuture:     true,
+			InFuture:     false,
 		},
 
 		&models.Season{
@@ -58,6 +57,12 @@ func Migrator() {
 			ID:         4,
 			ProjectsID: 2,
 			Number:     4,
+		},
+
+		&models.Season{
+			ID:         2,
+			ProjectsID: 3,
+			Number:     1,
 		},
 
 		&models.Video{
@@ -86,6 +91,13 @@ func Migrator() {
 			ProjectsID:   2,
 			SeriesNumber: 1,
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/demonslayer/4/1/demon_slayer1.m3u8",
+		},
+
+		&models.Video{
+			SeasonID:     2,
+			ProjectsID:   3,
+			SeriesNumber: 1,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/jujutsukaisen/s1e1/jujutsu11m.m3u8",
 		},
 
 		&models.Home{
