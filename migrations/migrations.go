@@ -100,6 +100,13 @@ func Migrator() {
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/jujutsukaisen/s1e1/jujutsu11m.m3u8",
 		},
 
+		&models.Video{
+			SeasonID:     4,
+			ProjectsID:   2,
+			SeriesNumber: 2,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/demonslayer/4/2/demonslayer42.m3u8",
+		},
+
 		&models.Home{
 			BackgroundURL: "https://storage.yandexcloud.net/zetrego/homevideos/jujutsukaisen.mp4",
 		},
