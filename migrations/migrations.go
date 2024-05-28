@@ -48,6 +48,16 @@ func Migrator() {
 			InFuture:     false,
 		},
 
+		&models.Projects{
+			ID:    4,
+			Title: "Разрушитель ветра",
+			Description: "Харука Сакура терпеть не может слабаков. Именно поэтому он поступил в старшую «Фурин», заработавшую себе " +
+				"репутацию школы с боями без правил, где ученики каждый день дерутся по причине и без.",
+			Image:        "https://storage.yandexcloud.net/zetrego2/WINDBREAKER/windbreaker_wallp.png",
+			VideoPreview: "https://storage.yandexcloud.net/zetrego/homevideos/windbreakertrailer2.mp4",
+			InFuture:     false,
+		},
+
 		&models.Season{
 			ID:         1,
 			ProjectsID: 1,
@@ -62,6 +72,11 @@ func Migrator() {
 		&models.Season{
 			ID:         2,
 			ProjectsID: 3,
+			Number:     1,
+		},
+		&models.Season{
+			ID:         3,
+			ProjectsID: 4,
 			Number:     1,
 		},
 
@@ -107,6 +122,13 @@ func Migrator() {
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/demonslayer/4/2/demonslayer42.m3u8",
 		},
 
+		&models.Video{
+			SeasonID:     3,
+			ProjectsID:   4,
+			SeriesNumber: 1,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/WINDBREAKER/S1E1/11.m3u8",
+		},
+
 		&models.Home{
 			BackgroundURL: "https://storage.yandexcloud.net/zetrego/homevideos/jujutsukaisen.mp4",
 		},
@@ -117,6 +139,10 @@ func Migrator() {
 
 		&models.Home{
 			BackgroundURL: "https://storage.yandexcloud.net/zetrego/homevideos/full_alastor_vid.mp4",
+		},
+
+		&models.Home{
+			BackgroundURL: "https://storage.yandexcloud.net/zetrego/homevideos/windbreakertrailer2.mp4",
 		},
 
 		&models.Socials{
