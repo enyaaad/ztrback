@@ -3,7 +3,7 @@ version: '3.4'
 
 services:
   go-server:
-    image: golang
+    image: dockerhub.timeweb.cloud/library/golang
     container_name: "ztrback"
     build: ./
     command: ./app
@@ -17,7 +17,7 @@ services:
 
 
   postgresdb:
-    image: postgres:15.6
+    image: dockerhub.timeweb.cloud/library/postgres:15.6
     container_name: "ztrback-db"
     restart: unless-stopped
     env_file: .env
