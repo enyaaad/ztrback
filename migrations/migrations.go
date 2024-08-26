@@ -14,9 +14,7 @@ func Migrator() {
 	err := db.DB.AutoMigrate(
 		&models.Projects{},
 		&models.Season{},
-		&models.News{},
 		&models.Home{},
-		&models.Socials{},
 		&models.Team{},
 		&models.Video{})
 
@@ -53,7 +51,7 @@ func Migrator() {
 			Title: "Разрушитель ветра",
 			Description: "Харука Сакура терпеть не может слабаков. Именно поэтому он поступил в старшую «Фурин», заработавшую себе " +
 				"репутацию школы с боями без правил, где ученики каждый день дерутся по причине и без.",
-			Image:        "https://storage.yandexcloud.net/zetrego2/WINDBREAKER/windbreaker_wallp.png",
+			Image:        "https://storage.yandexcloud.net/zetrego/series/preview/wind-breaker-anime-haruka-sakura-387%403%40a-thumb.jpg",
 			VideoPreview: "https://storage.yandexcloud.net/zetrego/homevideos/windbreakertrailer2.mp4",
 			InFuture:     false,
 		},
@@ -84,21 +82,21 @@ func Migrator() {
 			SeasonID:     1,
 			ProjectsID:   1,
 			SeriesNumber: 0,
-			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/S0E0Hazbin/S0E0_Hazbin~1.m3u8",
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/hazbinhotel/s1e0/S0E0_Hazbin1.m3u8",
 		},
 
 		&models.Video{
 			SeasonID:     1,
 			ProjectsID:   1,
 			SeriesNumber: 1,
-			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/S0E0Hazbin/S0E0_Hazbin~2.m3u8",
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/hazbinhotel/s1e1/S0E0_Hazbin2.m3u8",
 		},
 
 		&models.Video{
 			SeasonID:     1,
 			ProjectsID:   1,
 			SeriesNumber: 2,
-			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/hazbinhotel/s1e3/S0E0_Hazbin~3.m3u8",
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/hazbinhotel/s1e2/S0E0_Hazbin3.m3u8",
 		},
 		&models.Video{
 			SeasonID:     1,
@@ -118,7 +116,7 @@ func Migrator() {
 			SeasonID:     2,
 			ProjectsID:   3,
 			SeriesNumber: 1,
-			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/jujutsukaisen/s1e1/jujutsu11m.m3u8",
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/jujutsukaisen/1/1/jujutsu11m.m3u8",
 		},
 
 		&models.Video{
@@ -132,14 +130,14 @@ func Migrator() {
 			SeasonID:     4,
 			ProjectsID:   2,
 			SeriesNumber: 3,
-			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/demonslayer/43/demonslayer43.m3u8",
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/demonslayer/4/3/demonslayer43.m3u8",
 		},
 
 		&models.Video{
 			SeasonID:     3,
 			ProjectsID:   4,
 			SeriesNumber: 1,
-			SeriesURL:    "https://storage.yandexcloud.net/zetrego2/WINDBREAKER/S1E1/11.m3u8",
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/windbreaker/1/1/wb11.m3u8",
 		},
 
 		&models.Home{
@@ -156,62 +154,6 @@ func Migrator() {
 
 		&models.Home{
 			BackgroundURL: "https://storage.yandexcloud.net/zetrego/homevideos/windbreakertrailer2.mp4",
-		},
-
-		&models.Socials{
-			Title:       "🥰 Это - наш главный tg канал. Мы его очень любим :) 🥰",
-			Description: "Там вы сможете найти наш уютный чатик, канал с приколами и нашими переозвучками, новости, а также канал с нашими Проектами",
-			Url:         "https://t.me/ZetregoTeam",
-			LogoUrl:     "https://storage.yandexcloud.net/zetrego/socials/telegram.png",
-			ImageUrl:    "https://storage.yandexcloud.net/zetrego/about_back1.jpg",
-			Href:        "tg",
-		},
-		&models.Socials{
-			Title:       "😋 Youtube - канал одного из основателей. Там мы стараемся выкладывать интересные Shorts и другой контент 😋",
-			Description: "Подписывайтесь, чтобы быть в крусе новостей!",
-			Url:         "https://www.youtube.com/channel/UCfVELs4Npz1DKTpBfhKndtw",
-			LogoUrl:     "https://storage.yandexcloud.net/zetrego/socials/youtube.png",
-			ImageUrl:    "https://storage.yandexcloud.net/zetrego/about_back2.jpg",
-			Href:        "youtube",
-		},
-		&models.Socials{
-			Title:       "🔥 Основная и единственная группа во Вконтакте. Там выкладываются новости, видео и ВК Клипы 🔥",
-			Description: "( правда хотели бы вести группу почаще 😅 )",
-			Url:         "https://vk.com/zetregoteam",
-			LogoUrl:     "https://storage.yandexcloud.net/zetrego/socials/vk.png",
-			ImageUrl:    "https://storage.yandexcloud.net/zetrego/about_back3.jpg",
-			Href:        "vk",
-		},
-		&models.Socials{
-			Title:       "⭐ Основной TikTok нашей команд! Мемы, новости, шутки и приколы там! ⭐",
-			Description: "Обещаем вести его побольше!",
-			Url:         "https://www.tiktok.com/@sandministr",
-			LogoUrl:     "https://storage.yandexcloud.net/zetrego/socials/tiktok.png",
-			ImageUrl:    "https://storage.yandexcloud.net/zetrego/about_back4.jpg",
-			Href:        "tiktok",
-		},
-
-		&models.News{
-			TitleDate: "21.04.24",
-			Description: "Исправлены баги отображения страниц на мобильных устройствах \n " +
-				"Оптимизирована работа плеера. Теперь плеер грузится гораздо быстрее и \n" +
-				"потребляет трафик по мере просмотра, а не выкачивает всё видео сразу.",
-			Image: "",
-		},
-
-		&models.News{
-			TitleDate: "25.04.24",
-			Description: "🌟 Хочешь стать частью нашей удивительной команды " +
-				"и  начать озвучивать аниме/мультсериалы? Отправь нам свои " +
-				"работы на кастинг! Просто перейди по ссылке и заполни на нашу Google Форму!" +
-				"Мы постоянно находимся в поиске интересных голосов и качественных работ на постоянную основу! \n  " +
-				"https://forms.gle/THDTEZSUENDW413j7 \n " + "Мы с нетерпением ждем твоих талантов и идей! ✨",
-			Image: "https://storage.yandexcloud.net/zetrego/news/alastor_news.jpg",
-		},
-		&models.News{
-			TitleDate:   "28.04.24",
-			Description: "Большое обновление сайта! Улучшена поисковая оптимизация. \n Добавлена лента новостей на основную страницу \n Добавлен выбор сезонов для аниме и мультсериалов",
-			Image:       "",
 		},
 	}
 

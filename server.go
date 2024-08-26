@@ -40,12 +40,7 @@ func StartAPI() {
 	v1.Get("/body", handlers.GetAllBackgrounds)
 	v1.Get("/body/random", handlers.GetRandomBackground)
 
-	v1.Get("/socials", handlers.GetAllSocials)
-
 	v1.Get("/video/:id/:season/:series_number", handlers.GetVideo)
-
-	v1.Get("/news", handlers.GetAllNews)
-	v1.Get("/news/:id", handlers.GetNewsByID)
 
 	app.Use(cors.New())
 
