@@ -134,6 +134,13 @@ func Migrator() {
 		},
 
 		&models.Video{
+			SeasonID:     4,
+			ProjectsID:   2,
+			SeriesNumber: 4,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/demonslayer/4/4/demonslayer44.m3u8",
+		},
+
+		&models.Video{
 			SeasonID:     3,
 			ProjectsID:   4,
 			SeriesNumber: 1,
