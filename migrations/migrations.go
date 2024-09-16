@@ -120,6 +120,13 @@ func Migrator() {
 		},
 
 		&models.Video{
+			SeasonID:     2,
+			ProjectsID:   3,
+			SeriesNumber: 2,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/jujutsukaisen/1/2/jujutsu12.m3u8",
+		},
+
+		&models.Video{
 			SeasonID:     4,
 			ProjectsID:   2,
 			SeriesNumber: 2,
