@@ -178,7 +178,7 @@ func Migrator() {
 		},
 
 		&models.Video{
-			SeasonID:     4,
+			SeasonID:     5,
 			ProjectsID:   5,
 			SeriesNumber: 0,
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/lackadaisy/pilot/lackadaisypilot.m3u8",
