@@ -89,7 +89,7 @@ func Migrator() {
 		},
 
 		&models.Season{
-			ID:         4,
+			ID:         5,
 			ProjectsID: 5,
 			Number:     1,
 		},
