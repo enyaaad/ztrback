@@ -56,6 +56,15 @@ func Migrator() {
 			InFuture:     false,
 		},
 
+		&models.Projects{
+			ID:           5,
+			Title:        "Лакадейзи",
+			Description:  "Действие происходит во времена сухого закона в 1927 году в городе Сент-Луис штата Миссури, населённом антропоморфными животными. История повествует о судьбе нелегального бара «Лакадейзи» и одноименной банды после убийства её основателя.",
+			Image:        "https://storage.yandexcloud.net/zetrego/series/preview/lackadaisypreview.jpg",
+			VideoPreview: "https://storage.yandexcloud.net/zetrego/homevideos/lackadaisy.mp4",
+			InFuture:     false,
+		},
+
 		&models.Season{
 			ID:         1,
 			ProjectsID: 1,
@@ -72,9 +81,16 @@ func Migrator() {
 			ProjectsID: 3,
 			Number:     1,
 		},
+
 		&models.Season{
 			ID:         3,
 			ProjectsID: 4,
+			Number:     1,
+		},
+
+		&models.Season{
+			ID:         4,
+			ProjectsID: 5,
 			Number:     1,
 		},
 
@@ -127,6 +143,13 @@ func Migrator() {
 		},
 
 		&models.Video{
+			SeasonID:     2,
+			ProjectsID:   3,
+			SeriesNumber: 3,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/jujutsukaisen/1/3/jujutsu13.m3u8",
+		},
+
+		&models.Video{
 			SeasonID:     4,
 			ProjectsID:   2,
 			SeriesNumber: 2,
@@ -152,6 +175,13 @@ func Migrator() {
 			ProjectsID:   4,
 			SeriesNumber: 1,
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/windbreaker/1/1/wb11.m3u8",
+		},
+
+		&models.Video{
+			SeasonID:     1,
+			ProjectsID:   5,
+			SeriesNumber: 0,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/lackadaisy/pilot/lackadaisypilot.m3u8",
 		},
 
 		&models.Home{
