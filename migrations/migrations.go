@@ -188,7 +188,7 @@ func Migrator() {
 			SeasonID:     3,
 			ProjectsID:   4,
 			SeriesNumber: 2,
-			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/windbreaker/1/2/wb12.m3u8",
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/windbreaker/1/s2/wb12.m3u8",
 		},
 
 		&models.Video{
