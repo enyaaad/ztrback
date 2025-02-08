@@ -13,7 +13,8 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - postgresdb
+      postgresdb:
+        condition: service_healthy
 
 
   postgresdb:
@@ -26,7 +27,5 @@ services:
       interval: 1s
       timeout: 5s
       retries: 10
-    volumes:
-      - ./.data/db:/data/db
     ports:
       - 5432:5432
