@@ -48,7 +48,7 @@ func Migrator() {
 
 		&models.Projects{
 			ID:    4,
-			Title: "Разрушитель ветра",
+			Title: "Ветролом",
 			Description: "Харука Сакура терпеть не может слабаков. Именно поэтому он поступил в старшую «Фурин», заработавшую себе " +
 				"репутацию школы с боями без правил, где ученики каждый день дерутся по причине и без.",
 			Image:        "https://storage.yandexcloud.net/zetrego/series/preview/wind-breaker-anime-haruka-sakura-387%403%40a-thumb.jpg",
@@ -215,6 +215,13 @@ func Migrator() {
 			ProjectsID:   4,
 			SeriesNumber: 4,
 			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/windbreaker/1/s4/wb14.m3u8",
+		},
+
+		&models.Video{
+			SeasonID:     3,
+			ProjectsID:   4,
+			SeriesNumber: 5,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/windbreaker/1/s5/wb15.m3u8",
 		},
 
 		&models.Video{
