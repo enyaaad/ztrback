@@ -225,6 +225,13 @@ func Migrator() {
 		},
 
 		&models.Video{
+			SeasonID:     3,
+			ProjectsID:   4,
+			SeriesNumber: 6,
+			SeriesURL:    "https://storage.yandexcloud.net/zetrego/anime/windbreaker/1/s6/wb16.m3u8",
+		},
+
+		&models.Video{
 			SeasonID:     5,
 			ProjectsID:   5,
 			SeriesNumber: 0,

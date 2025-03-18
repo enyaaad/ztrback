@@ -21,11 +21,22 @@ services:
     image: dockerhub.timeweb.cloud/library/postgres:15.6
     container_name: "ztrback-db"
     restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 30s
     env_file: .env
+    command: ["postgres", "-c", "autovacuum=on", "-c", "fsync=on", "-c", "full_page_writes=on"]
+    environment:
+      - PGLOG=/var/lib/postgresql/data/pg_log
+      - LOG_ROTATION=10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready" ]
-      interval: 1s
+      interval: 2s
       timeout: 5s
       retries: 10
     ports:
       - 5432:5432
+
+volumes:
+  postgres_data:
